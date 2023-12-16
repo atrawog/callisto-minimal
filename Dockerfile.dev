@@ -47,10 +47,9 @@ RUN --mount=type=cache,target=$MAMBA_ROOT_PREFIX/pkgs,id=mamba-pkgs micromamba i
 
 
 # Copy the start script into the container
-COPY start-jupyter.sh /usr/src/app/
+# COPY start-jupyter.sh /usr/src/app/
 
 # Run the start script when the container launches
-CMD ["/usr/src/app/start-jupyter.sh"]
 
 # Make port 8888 available to the world outside this container
 EXPOSE 8888
@@ -68,6 +67,8 @@ RUN groupadd -g "${MAMBA_USER_GID}" "${MAMBA_USER}" && \
     useradd -m -u "${MAMBA_USER_ID}" -g "${MAMBA_USER_GID}" -s /bin/bash "${MAMBA_USER}"
 RUN mkdir -p "${MAMBA_ROOT_PREFIX}" && \
     chown "${MAMBA_USER}:${MAMBA_USER}" "${MAMBA_ROOT_PREFIX}"
+
+CMD ["jupyter", "notebook", "--ip", "0.0.0.0"]
 
 
 USER $MAMBA_USER
