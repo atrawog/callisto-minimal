@@ -1,1 +1,1 @@
-FROM ghcr.io/atrawog/callisto-minimal
+FROM atrawog/callisto-minimal

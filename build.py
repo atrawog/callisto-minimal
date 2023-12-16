@@ -49,5 +49,5 @@ if __name__ == "__main__":
     config = read_devcontainer_config(config_file_path)
     
     # Set the default image name or use the one provided as an argument
-    image_name = sys.argv[1] if len(sys.argv) > 1 else 'ghcr.io/atrawog/callisto-minimal'
+    image_name = sys.argv[1] if len(sys.argv) > 1 else 'atrawog/callisto-minimal'
     build_docker_image_with_buildx(config_file_path, config, image_name)

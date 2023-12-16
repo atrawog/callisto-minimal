@@ -17,7 +17,7 @@
 			// "NEW_MAMBA_USER_GID": "1010",
 		},
 		"cacheFrom": [
-			"type=registry,ref=ghcr.io/atrawog/callisto-minimal:latest"
+			"type=registry,ref=atrawog/callisto-minimal:latest"
 		]
 	},
 	"extensions": [	
